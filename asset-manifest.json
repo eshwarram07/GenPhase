@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/GenPhase/static/css/main.775229e4.css",
+    "main.js": "/GenPhase/static/js/main.0aaa896c.js",
+    "static/media/shape-mask.png": "/GenPhase/static/media/shape-mask.211b84c6fac1b490ad86.png",
+    "static/media/logo.png": "/GenPhase/static/media/logo.b76ba495223d52a61815.png",
+    "static/media/team.jpg": "/GenPhase/static/media/team.c46650002a899e3df33e.jpg",
+    "index.html": "/GenPhase/index.html",
+    "static/media/shape-right.svg": "/GenPhase/static/media/shape-right.d3ba26eb640a7171d8c4.svg",
+    "static/media/shape-left.svg": "/GenPhase/static/media/shape-left.038aa9e8166fb5b88d35.svg",
+    "main.775229e4.css.map": "/GenPhase/static/css/main.775229e4.css.map",
+    "main.0aaa896c.js.map": "/GenPhase/static/js/main.0aaa896c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.775229e4.css",
+    "static/js/main.0aaa896c.js"
+  ]
+}
