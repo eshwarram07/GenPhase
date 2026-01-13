@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------- */
+/* GLOBAL RESET STYLES        */
+/* --------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------- */
+/* TEST CLASS                 */
+/* --------------------------- */
+.test-red {
+  @apply text-red-500 text-5xl font-bold;
+}
+
+/* --------------------------- */
+/* FADE-IN ANIMATION          */
+/* --------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* --------------------------- */
+/* FADE-UP ANIMATION          */
+/* --------------------------- */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+/* --------------------------- */
+/* ROLLS ROYCE LINE ANIMATION */
+/* --------------------------- */
+@keyframes rrLine {
+  0% { opacity: 0; transform: scaleX(0.4); }
+  100% { opacity: 1; transform: scaleX(1); }
+}
+.animate-rrLine {
+  animation: rrLine 1.8s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+/* GLOW LINE */
+@keyframes rrLineGlow {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.4);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+}
+.animate-rrLineGlow {
+  animation: rrLineGlow 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* --------------------------- */
+/* MODAL ANIMATIONS           */
+/* --------------------------- */
+.modal-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* --------------------------- */
+/* GRADIENT MOVEMENT          */
+/* --------------------------- */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradientMove {
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+
+/* --------------------------- */
+/* BACKGROUND ANIMATION       */
+/* --------------------------- */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-bgMove {
+  background: linear-gradient(120deg, #e0f3ff, #f1e4ff, #ffe4f1);
+  background-size: 300% 300%;
+  animation: bgMove 8s ease-in-out infinite;
+}
+
+/* --------------------------- */
+/* SPIN SLOW                  */
+/* --------------------------- */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+/* --------------------------- */
+/* LOGO DROP ANIMATION        */
+/* --------------------------- */
+@keyframes logoFall {
+  0% { transform: translateY(-250px) rotate(-25deg); opacity: 0; }
+  40% { transform: translateY(25px) rotate(10deg); opacity: 1; }
+  65% { transform: translateY(-12px) rotate(-5deg); }
+  85% { transform: translateY(6px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+.animate-logo-fall {
+  animation: logoFall 1.8s cubic-bezier(0.25, 1.1, 0.3, 1) forwards;
+}
+
+/* COMPANY NAME SLIDE */
+@keyframes nameLeft {
+  0% { opacity: 0; transform: translateX(-80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-name-left {
+  animation: nameLeft 1.2s ease-out 1.8s forwards;
+}
+
+/* --------------------------- */
+/* MASK SHAPE (FINAL WORKING) */
+/* --------------------------- */
+.mask-shape {
+  -webkit-mask-image: url("./assets/shape-mask.png");
+  mask-image: url("./assets/shape-mask.png");
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+/* LEFT WAVE SHAPE */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 100%;
+  background: url("./assets/shape-left.svg") no-repeat center;
+  background-size: cover;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* RIGHT WAVE SHAPE */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -50px;
+  width: 500px;
+  height: 100%;
+  background: url("./assets/shape-right.svg") no-repeat center;
+  background-size: cover;
+  opacity: 0.85;
+  z-index: 1;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes glowBorder {
+  0% { box-shadow: 0 0 8px rgba(255,255,255,0.5); }
+  50% { box-shadow: 0 0 18px rgba(255,255,255,0.9); }
+  100% { box-shadow: 0 0 8px rgba(255,255,255,0.5); }
+}
+
+.animate-glow {
+  animation: glowBorder 2s infinite ease-in-out;
+}
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Hide scrollbar globally */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
